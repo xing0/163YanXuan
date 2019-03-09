@@ -1,0 +1,11 @@
+/*清除默认样式,这里我就简单手写了啊*/
+*{
+   margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}

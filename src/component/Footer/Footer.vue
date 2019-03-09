@@ -16,5 +16,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-
+  div
+    width 750px
+    background-color black
 </style>
