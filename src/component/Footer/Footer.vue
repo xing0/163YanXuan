@@ -1,26 +1,20 @@
 <template>
     <div>
-      123app123
-      <router-view></router-view>
-      <Footer/>
+      Footer
     </div>
 </template>
 
 <script>
-  import Footer from './component/Footer/Footer.vue'
     export default {
         data() {
             return {}
         },
         methods: {},
         computed: {},
-        components: {
-          Footer
-        }
+        components: {}
     }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-  div
-    color red
+
 </style>

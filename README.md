@@ -1,30 +1,11 @@
-# yanxuan
+##准备网易严选
+	1.技术选型
+		1.vue
+		2.stylus
+		3.Better-srcollor
+		4.vue-router
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+###开始制作
+	1.构建初级页面
+	2.制作rem适配
+	3.拆分首页组件
