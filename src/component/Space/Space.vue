@@ -1,25 +1,22 @@
 <template>
-    <div class="app">
-      <router-view></router-view>
-      <Footer/>
+    <div>
     </div>
 </template>
 
 <script>
-  import Footer from './component/Footer/Footer.vue'
     export default {
         data() {
             return {}
         },
         methods: {},
         computed: {},
-        components: {
-          Footer,
-        }
+        components: {}
     }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.app
-  padding-bottom 98px
+  div
+    height 20px
+    width 100%
+    background-color #f4f4f4
 </style>

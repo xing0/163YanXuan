@@ -5,6 +5,8 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import routes from './pages'
 import 'lib-flexible' //引入淘宝的rem适配
+import store from './store'
+import './mock'
 Vue.use(VueRouter)
 const router = new VueRouter({
   mode:"history",
@@ -16,6 +18,7 @@ new Vue({
     App,
   },
   template:"<App/>",
-  router
+  router,
+  store
 })
 
