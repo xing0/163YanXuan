@@ -9,3 +9,10 @@ a{
 li{
   list-style: none;
 }
+.app{
+  position: relative;
+}
+/*html,body{*/
+  /*overflow: hidden;*/
+  /*height: 100%;*/
+/*}*/

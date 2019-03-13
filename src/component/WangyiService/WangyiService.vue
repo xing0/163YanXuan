@@ -14,7 +14,6 @@
             return {}
         },
       mounted(){
-        console.log(this)
       },
         methods: {},
         computed: {

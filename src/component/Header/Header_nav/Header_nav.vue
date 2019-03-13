@@ -1,37 +1,40 @@
 <template>
     <div class="warp">
-      <Top></Top>
-      <section class="up">
+      <Top v-show="!fixed"></Top>
+      <div :class="{fixed:fixed}">
+        <section  class="up">
           <div class="title"></div>
           <div class="placeholder">搜索商品,共21749款好物</div>
           <div class="button">登录</div>
-      </section>
-      <section class="down">
-        <article class="nav">
-          <ul ref="nav" >
-            <li v-for="(item,index) in nav" :key="index"
+        </section>
+        <section class="down">
+          <article class="nav">
+            <ul ref="nav" >
+              <li v-for="(item,index) in nav" :key="index"
+                  :class="{active:$route.query.categoryId==menuIdList[item]||!$route.query.categoryId&&item=='推荐'}"
+                  @click="$router.push('/home?categoryId='+(menuIdList[item]||''))"
+              >{{item}}</li>
+            </ul>
+            <div class="gradual" @click="imageOpen = !imageOpen">
+              <img :class="{imageOpen}" src="../images/jiantou.png">
+            </div>
+          </article>
+          <aside v-show="imageOpen">
+            <p>全部频道</p>
+            <ul>
+              <li
+                v-for="(item,index) in nav" :key="index"
                 :class="{active:$route.query.categoryId==menuIdList[item]||!$route.query.categoryId&&item=='推荐'}"
                 @click="$router.push('/home?categoryId='+(menuIdList[item]||''))"
-            >{{item}}</li>
-          </ul>
-          <div class="gradual" @click="imageOpen = !imageOpen">
-            <img :class="{imageOpen}" src="../images/jiantou.png">
-          </div>
-        </article>
-        <aside v-show="imageOpen">
-          <p>全部频道</p>
-          <ul>
-            <li
-              v-for="(item,index) in nav" :key="index"
-              :class="{active:$route.query.categoryId==menuIdList[item]||!$route.query.categoryId&&item=='推荐'}"
-              @click="$router.push('/home?categoryId='+(menuIdList[item]||''))"
-            >
-              <div>{{item}}</div>
-            </li>
-          </ul>
-        </aside>
+              >
+                <div>{{item}}</div>
+              </li>
+            </ul>
+          </aside>
 
-      </section>
+        </section>
+      </div>
+      <div v-show="fixed" class="zhanwei">占位</div>
       <div class="mask" v-show="imageOpen" @click="imageOpen = !imageOpen"></div>
     </div>
 </template>
@@ -41,6 +44,9 @@
   import BScroll from 'better-scroll'
   import {mapGetters} from 'vuex'
     export default {
+    props:{
+      fixed:Number
+    },
         data() {
             return {
               nav:['推荐','居家生活','服饰鞋包','美食酒水','个护清洁', '母婴亲子','运动旅行','数码家电','礼品特色'],
@@ -76,6 +82,8 @@
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import "../../../mix/mix.styl"
+  .zhanwei
+    height 104px
   .up
     position relative
     z-index 10
@@ -111,7 +119,13 @@
       text-align center
       border-radius 6px
       color red
+  .fixed
+    position fixed
+    top: 0
+    width 100%
+    z-index 5
   .down
+    bg(white)
     position relative
     .nav
       /*overflow hidden*/
@@ -181,11 +195,12 @@
             color #b4282d
   .mask
     position: absolute;
+    padding-top 105px
     left 0
     top 0
     bottom 0
-    z-index 7
+    z-index 4
     width 100%
-    height 100%
     bg(rgba(0,0,0,.5))
+
 </style>
