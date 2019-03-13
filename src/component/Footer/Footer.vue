@@ -8,7 +8,7 @@
         <i class="iconfont icon-sanmenyigui"></i>
         <p>分类</p>
       </router-link>
-      <router-link to="/home">
+      <router-link to="/topic">
         <i class="iconfont icon-tupian"></i>
         <p>识图</p>
       </router-link>
