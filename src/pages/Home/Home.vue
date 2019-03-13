@@ -18,15 +18,7 @@
       <Shop4Mode></Shop4Mode>
       <Space></Space>
       <Theme></Theme>
-      <Space></Space>
       <HomeFooter></HomeFooter>
-      <Space></Space>
-      <Space></Space>
-      <Space></Space>
-      <Space></Space>
-      <Space></Space>
-      <Space></Space>
-
     </header>
 </template>
 
